@@ -5,7 +5,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <h1>DevCamp</h1>
-        <h2>React Redux Router</h2>
+        <h2>React Redux</h2>
       </div>
     );
   }
