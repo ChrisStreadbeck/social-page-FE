@@ -1,35 +1,28 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-export default class App extends Component {
+import NavBar from "./navigation/navBar";
+import Footer from "./navigation/footer";
+import Home from "./pages/home";
+import CardFrame from "./cards/cardFrame";
+
+class App extends Component {
   render() {
     return (
-      <div className="app">
-        <div className="navbar">
-          <div className="logo">
-            <h1>Logo</h1>
-          </div>
-          <div className="nav-links">
-            <div className="nav1">
-              <h1>nav link</h1>
-            </div>
-            <div className="nav1">
-              <h1>nav link</h1>
-            </div>
-            <div className="nav1">
-              <h1>nav link</h1>
-            </div>
-            <div className="nav1">
-              <h1>nav link</h1>
-            </div>
-          </div>
-        </div>
-        <div className="middle">
-          <h1>this is where the cards go</h1>
-        </div>
-        <div className="footer">
-          <h1>footer</h1>
-        </div>
+      <div className="app">   
+
+        <NavBar />
+        <CardFrame />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Home} />
+          </Switch>
+        </Router>
+        <Footer />
+
       </div>
     );
   }
 }
+
+export default App;
