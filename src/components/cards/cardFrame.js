@@ -18,7 +18,7 @@ class CardFrame extends Component {
   render() {
     let details = this.state.people.map(singleUser => {
       return (
-        <div className="profile-card">
+        <div className="profile-cards">
           <ProfileCard details={singleUser} />
         </div>
       );
