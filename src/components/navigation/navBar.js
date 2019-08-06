@@ -22,6 +22,9 @@ const NavBar = () => {
             <Link to="/contact">Contact</Link>
           </div>
           <div className="nav-link">
+            <Link to="/form-filler">Form</Link>
+          </div>
+          <div className="nav-link">
             <Link to="/help">Help</Link>
           </div>
         </div>
