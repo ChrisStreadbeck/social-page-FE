@@ -18,8 +18,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/about" component={SocialForm} />
-              <Route path="/c/:slug" component={CardDetail} />
-              {/* <Route component={NoMatch} /> */}
+              <Route exact path="/c/:slug" component={CardDetail} />
+              <Route component={NoMatch} />
             </Switch>
             <Footer />
           </div>
