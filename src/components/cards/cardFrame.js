@@ -34,7 +34,7 @@ class CardFrame extends Component {
   }
 
   render() {
-    return <div className="profile-cards">{this.renderUsers()}</div>;
+    return <div className="card-page">{this.renderUsers()}</div>;
 
   }
 }
