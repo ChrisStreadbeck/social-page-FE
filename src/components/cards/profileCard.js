@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProfileCard = props => {
   return (
@@ -9,11 +10,13 @@ const ProfileCard = props => {
           alt=""
         />
         <div className="profile-card-body">
-          <div className="info">
-            <h2>Name: {props.details.name}</h2>
-            <p>Bio: {props.details.description}</p>
-          </div>
-          <button>Button</button>
+
+          <h2>Name: {props.name}</h2>
+          <p>Bio: {props.description}</p>
+          <Link to={`/b/${props.slug}`}>
+            <button>Button</button>
+          </Link>
+
         </div>
       </div>
     </div>
