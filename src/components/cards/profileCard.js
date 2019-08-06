@@ -9,11 +9,11 @@ const ProfileCard = props => {
         <div className="profile-card-body">
           <h2>{props.person}</h2>
           <h3>{props.tag}</h3>
-          <Link to={`/c/${props.slug}`}>
-            <button>Profile</button>
-          </Link>
         </div>
       </div>
+      <Link to={`/c/${props.slug}`}>
+        <button>Profile</button>
+      </Link>
     </div>
   );
 };
