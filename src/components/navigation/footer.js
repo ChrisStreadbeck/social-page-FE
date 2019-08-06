@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="copyright-container">
-        © 2019 unsocial-social | All rights reserved
+        © 2019 Socialy-Unsocial | All rights reserved
       </div>
     </div>
   );
