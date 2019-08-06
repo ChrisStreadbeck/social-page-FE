@@ -10,13 +10,11 @@ const ProfileCard = props => {
           alt=""
         />
         <div className="profile-card-body">
-
-          <h2>Name: {props.name}</h2>
+          <h2>Name: {props.user}</h2>
           <p>Bio: {props.description}</p>
-          <Link to={`/b/${props.slug}`}>
+          <Link to={`/c/${props.slug}`}>
             <button>Button</button>
           </Link>
-
         </div>
       </div>
     </div>
