@@ -30,12 +30,10 @@ class CardFrame extends Component {
         />
       );
     });
-
   }
 
   render() {
     return <div className="card-page">{this.renderUsers()}</div>;
-
   }
 }
 
