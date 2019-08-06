@@ -13,8 +13,7 @@ class CardFrame extends Component {
         id: 1,
         image:
           "https://vignette.wikia.nocookie.net/arresteddevelopment/images/e/e6/3x3_Bob_Loblaw.png/revision/latest?cb=20121117203508",
-        longdescription:
-          "You are smart. This aint your first rodeo, and you are not about to fall for the preposterous claims made by so many of the profiles on this site. So heres a refreshing perspective—the truth.I pay my mortgage. I wear socks that match. I am an honest man, with a decent career and strong values. So While I could regale you with stories of my trips to Paris or how I resemble Ryan Gosling…I know that good communication is a foundation for every relationship. So if we are on the same wavelength, read on…",
+        longdescription: "long description goes here",
         name: "Bob Loblaw",
         shortdescription: "I, Bob, like to take long walks on the beach..."
       },
@@ -22,8 +21,7 @@ class CardFrame extends Component {
         id: 2,
         image:
           "https://vignette.wikia.nocookie.net/arresteddevelopment/images/e/e6/3x3_Bob_Loblaw.png/revision/latest?cb=20121117203508",
-        longdescription:
-          "You are smart. This aint your first rodeo, and you are not about to fall for the preposterous claims made by so many of the profiles on this site. So heres a refreshing perspective—the truth.I pay my mortgage. I wear socks that match. I am an honest man, with a decent career and strong values. So While I could regale you with stories of my trips to Paris or how I resemble Ryan Gosling…I know that good communication is a foundation for every relationship. So if we are on the same wavelength, read on…",
+        longdescription: "long description goes here",
         name: "Bob Loblaw",
         shortdescription: "I, Bob, like to take long walks on the beach..."
       },
@@ -45,8 +43,7 @@ class CardFrame extends Component {
           person={user.name}
           tag={user.shortdescription}
           bio={user.longdescription}
-
-          slug={user.slug}
+          slug={user.id}
         />
       );
     });
