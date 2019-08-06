@@ -1,0 +1,74 @@
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5em;
+  background-color: #9a1c1c;
+
+  border-bottom: 1px solid;
+
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 3em;
+    margin: 10px;
+
+    border: 1px solid;
+  }
+
+  .grid-row-header {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    height: 100%;
+    width: 50em;
+    margin-right: 10px;
+
+    .username-display {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+      font-size: 16px;
+      margin-right: 40px;
+    }
+
+    .nav-links-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 45em;
+    }
+
+    .nav-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+      height: 100%;
+      margin: 10px;
+      background-color: #880505;
+
+      border: 1px solid;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: white;
+      }
+
+      &:hover {
+        background-color: #bf5b5b;
+        cursor: pointer;
+      }
+    }
+  }
+}
