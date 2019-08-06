@@ -9,9 +9,7 @@ import CardFrame from "./cards/cardFrame";
 class App extends Component {
   render() {
     return (
-      <div className="app">
-
-        
+      <div className="app">   
 
         <NavBar />
         <CardFrame />
@@ -21,6 +19,7 @@ class App extends Component {
           </Switch>
         </Router>
         <Footer />
+
       </div>
     );
   }
