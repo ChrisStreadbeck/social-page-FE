@@ -1,14 +1,44 @@
-.profile-card-wrapper {
+.card-page {
   display: grid;
-  width: 100%;
-  .profile-card {
+  justify-items: center;
+  align-items: center;
+  height: 900px;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  .profile-card-wrapper {
     display: flex;
-    flex-direction: column;
-    width: 100px;
-    height: 100px;
-  }
+    width: 300px;
+    height: 400px;
 
-  .profile-card img {
-    height: 50%;
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: #424949;
+      border-radius: 10px;
+    }
+
+    .profile-card img {
+      height: 200px;
+      width: 200px;
+    }
+
+    .profile-card-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      width: 90%;
+
+      button {
+        width: 100px;
+        height: 40px;
+        background-color: silver;
+        outline: none;
+      }
+    }
   }
 }
