@@ -23,7 +23,7 @@ class CardFrame extends Component {
         </div>
       );
     });
-    return <div>{details}</div>;
+    return <div className="card-page">{details}</div>;
   }
 }
 
