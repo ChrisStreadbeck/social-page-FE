@@ -5,7 +5,9 @@ const NavBar = () => {
   return (
     <div className="nav-header">
       <div className="logo-wrapper">
-        <div className="logo">// LOGO GOES HERE</div>
+        <div className="logo">
+          <h1>Socially Unsocial</h1>
+        </div>
       </div>
       <div className="grid-row-header">
         <div className="username-display">user name</div>

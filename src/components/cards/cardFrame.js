@@ -5,25 +5,37 @@ import ProfileCard from "./profileCard";
 class CardFrame extends Component {
   state = {
     people: [
-      { name: "Dan", description: "I like donuts" },
-      { name: "Steph", description: "I like candy" },
-      { name: "Kevin", description: "I like pizza" },
-      { name: "Steve", description: "I like friends" },
-      { name: "Cindy", description: "I like long walks on beach" },
-      { name: "Levi", description: "I like free samples" },
-      { name: "Pete", description: "I like pretzels" },
-      { name: "Mike", description: "I like cheese" }
+      { name: "Dan", description: "I like donuts", slug: "Dan" },
+      { name: "Steph", description: "I like candy", slug: "Steph" },
+      { name: "Kevin", description: "I like pizza", slug: "Kevin" },
+      { name: "Steve", description: "I like friends", slug: "Steve" },
+      {
+        name: "Cindy",
+        description: "I like long walks on beach",
+        slug: "Cindy"
+      },
+      { name: "Levi", description: "I like free samples", slug: "Levi" },
+      { name: "Pete", description: "I like pretzels", slug: "Pete" },
+      { name: "Mike", description: "I like cheese", slug: "Mike" }
     ]
   };
-  render() {
-    let details = this.state.people.map(singleUser => {
+
+  renderUsers() {
+    return this.state.people.map(user => {
       return (
-        <div className="profile-cards">
-          <ProfileCard details={singleUser} />
-        </div>
+        <ProfileCard
+          user={user.name}
+          description={user.description}
+          slug={user.slug}
+        />
       );
     });
-    return <div className="card-page">{details}</div>;
+
+  }
+
+  render() {
+    return <div className="profile-cards">{this.renderUsers()}</div>;
+
   }
 }
 
