@@ -7,6 +7,9 @@ import Home from "./pages/home";
 import SocialForm from "./pages/socialForm";
 import NoMatch from "./pages/no-match";
 import CardDetail from "./cards/cardDetail";
+import About from "./pages/about";
+import Help from "./pages/help";
+import Contact from "./pages/contact";
 
 class App extends Component {
   render() {
@@ -17,7 +20,10 @@ class App extends Component {
             <NavBar />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/about" component={SocialForm} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
+              <Route path="/help" component={Help} />
+              <Route path="/form-filler" component={SocialForm} />
               <Route exact path="/c/:slug" component={CardDetail} />
               <Route component={NoMatch} />
             </Switch>
