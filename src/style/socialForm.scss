@@ -48,4 +48,23 @@
       }
     }
   }
+  .profile-card-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .profile-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 25px;
+      border: 1px solid black;
+    }
+  }
+
+  img {
+    width: 75px;
+    height: 75px;
+  }
 }
