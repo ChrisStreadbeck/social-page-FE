@@ -95,7 +95,7 @@ const SocialForm = props => {
               value={shortdescription}
               onChange={e => setShortdescription(e.target.value)}
             />
-            <input
+            <textarea
               type="text"
               placeholder="Long Bio"
               value={longdescription}
