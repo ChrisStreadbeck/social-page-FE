@@ -1,9 +1,10 @@
 import React from "react";
+import CardFrame from "../cards/cardFrame";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home Page</h1>
+      <CardFrame />
     </div>
   );
 };
