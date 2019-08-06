@@ -5,8 +5,6 @@ const ProfileCard = props => {
     <div className="profile-card-wrapper">
       <div className="profile-card">
         <img
-          top
-          width="100%"
           src="http://ericsnaturalpharmacy.com/wp-content/uploads/2019/02/blank-profile-picture.png"
           alt=""
         />
