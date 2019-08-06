@@ -9,8 +9,10 @@ const ProfileCard = props => {
           alt=""
         />
         <div className="profile-card-body">
-          <h2>Name: {props.details.name}</h2>
-          <p>Bio: {props.details.description}</p>
+          <div className="info">
+            <h2>Name: {props.details.name}</h2>
+            <p>Bio: {props.details.description}</p>
+          </div>
           <button>Button</button>
         </div>
       </div>
