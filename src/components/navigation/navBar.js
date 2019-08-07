@@ -10,7 +10,7 @@ const NavBar = () => {
         </div>
       </div>
       <div className="grid-row-header">
-        <div className="username-display">user name</div>
+        <div className="username-display">User: Neil</div>
         <div className="nav-links-wrapper">
           <div className="nav-link">
             <Link to="/">Home</Link>

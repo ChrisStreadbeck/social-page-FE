@@ -10,6 +10,7 @@ import CardDetail from "./cards/cardDetail";
 import About from "./pages/about";
 import Help from "./pages/help";
 import Contact from "./pages/contact";
+import EditForm from "./pages/editForm";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path="/contact" component={Contact} />
               <Route path="/help" component={Help} />
               <Route path="/form-filler" component={SocialForm} form={true} />
+              {/* <Route path="/form-filler:id" component={EditForm} /> */}
               <Route exact path="/c/:slug" component={CardDetail} />
               <Route component={NoMatch} />
             </Switch>
