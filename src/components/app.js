@@ -9,7 +9,9 @@ import NoMatch from "./pages/no-match";
 import CardDetail from "./cards/cardDetail";
 import About from "./pages/about";
 import Help from "./pages/help";
+import RealHelp from "./pages/real-help";
 import Contact from "./pages/contact";
+import EditForm from "./pages/editForm";
 
 class App extends Component {
   render() {
@@ -23,7 +25,9 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/help" component={Help} />
+              <Route path="/real-help" component={RealHelp} />
               <Route path="/form-filler" component={SocialForm} form={true} />
+              {/* <Route path="/form-filler:id" component={EditForm} /> */}
               <Route exact path="/c/:slug" component={CardDetail} />
               <Route component={NoMatch} />
             </Switch>
