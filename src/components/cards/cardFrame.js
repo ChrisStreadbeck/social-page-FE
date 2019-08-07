@@ -1,35 +1,60 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import ProfileCard from "./profileCard";
 
-const CardFrame = props => {
-  const [socials, setSocial] = React.useState([]);
 
-  React.useEffect(() => {
-    fetch("https://social-page-be.herokuapp.com/socials")
-      .then(response => response.json())
-      .then(data => setSocial(data))
-      .catch(error => console.log(error));
-  }, []);
+class CardFrame extends Component {
+  constructor(props) {
+    super(props);
 
-  const renderUsers = () => {
-    return socials.map(social => {
+    this.state = {
+      isLoading: false,
+      data: []
+    };
+
+    this.getProfileItems = this.getProfileItems.bind(this);
+  }
+
+  getProfileItems() {
+    axios
+      .get("https://social-page-be.herokuapp.com/socials")
+      .then(response => {
+        this.setState({
+          data: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  renderUsers() {
+    return this.state.data.map(user => {
       return (
         <ProfileCard
-          key={social.id}
+          key={user.id}
           id={social.id}
-          image={social.image}
-          person={social.name}
-          tag={social.shortdescription}
-          bio={social.longdescription}
-          slug={social.id}
+          image={user.image}
+          person={user.name}
+          tag={user.shortdescription}
+          bio={user.longdescription}
+          slug={user.id}
           form={props.form}
         />
       );
     });
   };
 
-  return <div className="card-page">{renderUsers()}</div>;
-};
+
+  componentDidMount() {
+    this.getProfileItems();
+  }
+
+  render() {
+    return <div className="card-page">{this.renderUsers()}</div>;
+  }
+}
+
 
 export default CardFrame;
