@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { navigate } from "hookrouter";
 
 const ProfileCard = props => {
   const [socials, setSocial] = React.useState([]);
 
   const handleUpdateButtonClick = id => {
     console.log(props.id);
-    // navigate(`/form-filler:${props.id}`);
   };
 
   const handleDeleteButtonClick = id => {

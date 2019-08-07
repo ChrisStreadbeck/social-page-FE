@@ -17,9 +17,7 @@ class CardDetail extends Component {
   getUsers() {
     axios
       .get(
-        `https://social-page-be.herokuapp.com/social/${
-          this.props.match.params.slug
-        }`
+        `https://social-page-be.herokuapp.com/social/${this.props.match.params.slug}`
       )
       .then(response => {
         this.setState({
