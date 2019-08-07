@@ -51,7 +51,6 @@ const SocialForm = props => {
   };
 
   const handleNewSocialSubmission = e => {
-    e.preventDefault();
     fetch("https://social-page-be.herokuapp.com/add-social", {
       method: "POST",
       headers: {
