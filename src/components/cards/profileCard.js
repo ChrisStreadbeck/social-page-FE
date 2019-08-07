@@ -2,6 +2,21 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProfileCard = props => {
+  const [socials, setSocial] = React.useState([]);
+
+  const handleUpdateButtonClick = () => {
+    console.log("update it");
+  };
+
+  const handleDeleteButtonClick = id => {
+    fetch(`https://social-page-be.herokuapp.com/social/${props.id}`, {
+      method: "DELETE"
+    })
+      .then(setSocial(socials.filter(social => social.id !== id)))
+      .then(console.log("Deleted!"))
+      .catch(error => console.log("deletion error", error));
+  };
+
   return (
     <div className="profile-card-wrapper">
       <div className="profile-card">
@@ -14,6 +29,16 @@ const ProfileCard = props => {
       <Link to={`/c/${props.slug}`}>
         <button>Profile</button>
       </Link>
+      {props.form ? (
+        <div className="update-delete-btns-wrapper">
+          <button className="btn" onClick={() => handleUpdateButtonClick()}>
+            Update
+          </button>
+          <button className="btn" onClick={() => handleDeleteButtonClick()}>
+            Delete
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };

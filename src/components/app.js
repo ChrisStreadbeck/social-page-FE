@@ -23,7 +23,7 @@ class App extends Component {
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />
               <Route path="/help" component={Help} />
-              <Route path="/form-filler" component={SocialForm} />
+              <Route path="/form-filler" component={SocialForm} form={true} />
               <Route exact path="/c/:slug" component={CardDetail} />
               <Route component={NoMatch} />
             </Switch>
