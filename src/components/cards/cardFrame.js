@@ -2,56 +2,34 @@ import React, { Component } from "react";
 
 import ProfileCard from "./profileCard";
 
-class CardFrame extends Component {
-  constructor() {
-    super();
-  }
+const CardFrame = props => {
+  const [socials, setSocial] = React.useState([]);
 
-  renderUsers() {
-    const people = [
-      {
-        id: 1,
-        image:
-          "https://vignette.wikia.nocookie.net/arresteddevelopment/images/e/e6/3x3_Bob_Loblaw.png/revision/latest?cb=20121117203508",
-        longdescription: "long description goes here",
-        name: "Bob Loblaw",
-        shortdescription: "I, Bob, like to take long walks on the beach..."
-      },
-      {
-        id: 2,
-        image:
-          "https://vignette.wikia.nocookie.net/arresteddevelopment/images/e/e6/3x3_Bob_Loblaw.png/revision/latest?cb=20121117203508",
-        longdescription: "long description goes here",
-        name: "Bob Loblaw",
-        shortdescription: "I, Bob, like to take long walks on the beach..."
-      },
-      {
-        id: 3,
-        image:
-          "https://res.cloudinary.com/cstread/image/upload/v1565121532/u5fiacpzralalrpdty3y.png",
-        longdescription:
-          "Here go Lots of words to fill in his long bio with more information.  There are two sentences.  Oh wait, three...",
-        name: "Stuart Hargrave",
-        shortdescription: "Super Normal Man "
-      }
-    ];
+  React.useEffect(() => {
+    fetch("https://social-page-be.herokuapp.com/socials")
+      .then(response => response.json())
+      .then(data => setSocial(data))
+      .catch(error => console.log(error));
+  }, []);
 
-    return people.map(user => {
+  const renderUsers = () => {
+    return socials.map(social => {
       return (
         <ProfileCard
-          image={user.image}
-          person={user.name}
-          tag={user.shortdescription}
-          bio={user.longdescription}
-          slug={user.id}
+          key={social.id}
+          id={social.id}
+          image={social.image}
+          person={social.name}
+          tag={social.shortdescription}
+          bio={social.longdescription}
+          slug={social.id}
+          form={props.form}
         />
       );
     });
-  }
+  };
 
-  render() {
-    return <div className="card-page">{this.renderUsers()}</div>;
-  }
-}
+  return <div className="card-page">{renderUsers()}</div>;
+};
 
 export default CardFrame;
