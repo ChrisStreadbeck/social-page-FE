@@ -25,20 +25,21 @@ class CardDetail extends Component {
         this.setState({
           users: response.data
         });
-        console.log(this.state.users);
       })
       .catch(error => console.log("getUsers error", error));
   }
 
   render() {
-    const { image, longdescription, name, shortdescription } = this.state.users;
+    const { image, longdescription, name } = this.state.users;
     return (
       <div className="card-detail-wrapper">
         <div className="centered-profile">
-          <div className="card-detail-pic">{image}</div>
+          <div className="card-detail-pic">
+            <img src={image} alt="profile-pic" />
+          </div>
           <div className="card-detail-username">{name}</div>
-          <div className="card-detail-long-text">{longdescription}</div>
         </div>
+        <div className="card-detail-long-text">{longdescription}</div>
       </div>
     );
   }
