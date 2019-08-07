@@ -3,9 +3,10 @@ import axios from "axios";
 
 import ProfileCard from "./profileCard";
 
+
 class CardFrame extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       isLoading: false,
@@ -33,15 +34,18 @@ class CardFrame extends Component {
       return (
         <ProfileCard
           key={user.id}
+          id={social.id}
           image={user.image}
           person={user.name}
           tag={user.shortdescription}
           bio={user.longdescription}
           slug={user.id}
+          form={props.form}
         />
       );
     });
-  }
+  };
+
 
   componentDidMount() {
     this.getProfileItems();
@@ -51,5 +55,6 @@ class CardFrame extends Component {
     return <div className="card-page">{this.renderUsers()}</div>;
   }
 }
+
 
 export default CardFrame;
