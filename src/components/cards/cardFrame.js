@@ -44,6 +44,7 @@ class CardFrame extends Component {
           tag={user.shortdescription}
           bio={user.longdescription}
           slug={user.id}
+          key={user.id}
         />
       );
     });
