@@ -4,7 +4,7 @@ import CardFrame from "../cards/cardFrame";
 const Home = () => {
   return (
     <div>
-      <CardFrame />
+      <CardFrame form={false} />
     </div>
   );
 };

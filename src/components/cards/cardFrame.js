@@ -1,35 +1,52 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import ProfileCard from "./profileCard";
 
 class CardFrame extends Component {
-  state = {
-    people: [
-      { name: "Dan", description: "I like donuts", slug: "Dan" },
-      { name: "Steph", description: "I like candy", slug: "Steph" },
-      { name: "Kevin", description: "I like pizza", slug: "Kevin" },
-      { name: "Steve", description: "I like friends", slug: "Steve" },
-      {
-        name: "Cindy",
-        description: "I like long walks on beach",
-        slug: "Cindy"
-      },
-      { name: "Levi", description: "I like free samples", slug: "Levi" },
-      { name: "Pete", description: "I like pretzels", slug: "Pete" },
-      { name: "Mike", description: "I like cheese", slug: "Mike" }
-    ]
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+      data: []
+    };
+
+    this.getProfileItems = this.getProfileItems.bind(this);
+  }
+
+  getProfileItems() {
+    axios
+      .get("https://social-page-be.herokuapp.com/socials")
+      .then(response => {
+        this.setState({
+          data: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
 
   renderUsers() {
-    return this.state.people.map(user => {
+    return this.state.data.map(user => {
       return (
         <ProfileCard
-          user={user.name}
-          description={user.description}
-          slug={user.slug}
+          key={user.id}
+          id={user.id}
+          image={user.image}
+          person={user.name}
+          tag={user.shortdescription}
+          bio={user.longdescription}
+          slug={user.id}
+          form={this.props.form}
         />
       );
     });
+  }
+
+  componentDidMount() {
+    this.getProfileItems();
   }
 
   render() {
