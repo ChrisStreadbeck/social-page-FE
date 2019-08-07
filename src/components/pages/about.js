@@ -5,6 +5,10 @@ const About = () => {
     <div className="about-wrapper">
       <h1>About Us</h1>
       <div className="info-wrapper">
+        <img
+          src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NDg0MDU0NTIzODQwMDE1/steven-jobs-9354805-2-402.jpg"
+          alt="Steve Jobs"
+        />
         <h1>
           OOP as explained by STEVE JOBS “Objects are like people. They’re
           living, breathing things that have knowledge inside them about how to
