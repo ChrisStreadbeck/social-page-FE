@@ -14,7 +14,6 @@ const ProfileCard = props => {
     })
       .then(setSocial(socials.filter(social => social.id !== id)))
       .then(console.log("Deleted!"))
-      .then(window.location.reload())
       .catch(error => console.log("deletion error", error));
   };
 
